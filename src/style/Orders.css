@@ -1,0 +1,11 @@
+.darkTheme text {
+  fill: #fff!important;
+}
+.Orders-title {
+  font-size: 24px;
+  font-weight: bold;
+  text-align: left;
+}
+.Orders-chart {
+  display: flex;
+}

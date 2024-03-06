@@ -1,0 +1,22 @@
+.darkTheme .layout {
+  background-color: #1e1e1e;
+}
+.darkTheme .layout-inner {
+  background-color: #171717;
+  color: #fff;
+}
+.layout {
+  background-color: #f0f0f0;
+  position: absolute;
+  left: 5vw;
+  top: 10vh;
+  right: 0vw;
+  bottom: 1vh;
+  padding: 30px;
+  height: fit-content;
+}
+.layout-inner {
+  background-color: #fff;
+  padding: 30px;
+  border-radius: 8px;
+}
