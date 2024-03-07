@@ -3,8 +3,14 @@
   justify-content: space-between;
   align-items: center;
 }
+
 .count {
-  font-size: 24px;
+  font-size: 18px;
   font-weight: 700;
   text-align: left;
+}
+@media only screen and (min-width: 650px) {
+  .count {
+    font-size: 24px;
+  }
 }

@@ -2,6 +2,13 @@
   text-align: center;
   min-height: 100vh;
   background-color: #f0f0f0;
+  position: relative;
+}
+
+.hamburger {
+  position: absolute;
+  left: 24px;
+  top: 24px;
 }
 
 .App.darkTheme {
@@ -32,15 +39,44 @@
     transform: rotate(360deg);
   }
 }
-.App.fullWidth .menubar {
+.App.expand .menubar {
   width: 15vw;
-  transition: width 1s ease-in-out;
+  transition: width 1s ease;
 }
-.App.fullWidth .navbar {
+.App.collapse .menubar {
+  width: 5vw;
+  transition: width 1s ease;
+}
+.App.expand .navbar {
   left: 15vw;
-  transition: left 1s ease-in-out;
+  transition: left 1s ease;
 }
-.App.fullWidth .layout {
+.App.collapse .navbar {
+  left: 5vw;
+  transition: left 1s ease;
+}
+.App.expand .layout {
   left: 17vw;
-  transition: left 1s ease-in-out;
+  transition: left 1s ease;
+}
+.App.collapse .layout {
+  left: 5vw;
+  transition: left 1s ease;
+
+}
+.App.hideNavbar .menubar {
+  width: 0;
+  padding: 0;
+}
+.App.hideNavbar .navbar,
+.App.hideNavbar .layout {
+  left: 0;
+}
+.App.mobileView.showNavbar .menubar {
+  width: 80%;
+}
+@media only screen and (min-width: 768px) {
+  .App.mobileView.showNavbar .menubar {
+    width: 28vw;
+  }
 }

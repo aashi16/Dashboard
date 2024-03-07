@@ -1,16 +1,22 @@
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faBell, faMoon, faUser, faExpandAlt, faCompressAlt, faSun } from '@fortawesome/free-solid-svg-icons'
+import { faBell, faMoon, faUser, faExpandAlt, faCompressAlt, faSun, faBars } from '@fortawesome/free-solid-svg-icons'
 import '../style/Navbar.css'
-import {  useContext } from 'react'
+import {  useContext, useState } from 'react'
 import DashboardContext from '../Helpers/Dashboardcontext.js';
-const Navbar = () => {
-  const {rescale,setRescale, darkTheme, setDarkTheme} = useContext(DashboardContext);
+const Navbar = (props) => {
+  const { showNavbar } = props;
+  const [resize, setResize] = useState(false);
+  const {rescale,setRescale, darkTheme, setDarkTheme,isMobile ,setIsMobile,mobileNav, setMobileNav} = useContext(DashboardContext);
+  const showMobileNav = () => {
+    setResize(!resize);
+    showNavbar(!resize);
+  }
   return (<div className="navbar">
     <div className='navbar-left'>
-   {!rescale && ( <a onClick={()=>{setRescale(!rescale)}}>
+   {!isMobile && !rescale && ( <a onClick={()=>{setRescale(!rescale)}}>
     <FontAwesomeIcon icon={faExpandAlt}></FontAwesomeIcon>
     </a>)}
-   {rescale &&  <a onClick={()=>{setRescale(!rescale)}}>
+   {!isMobile  && rescale &&  <a onClick={()=>{setRescale(!rescale)}}>
     <FontAwesomeIcon icon={faCompressAlt}></FontAwesomeIcon>
     </a>}
     </div>
@@ -27,6 +33,11 @@ const Navbar = () => {
     <a>
     <FontAwesomeIcon icon={faUser}></FontAwesomeIcon>
     </a>
+    {isMobile && (
+    (<a onClick={showMobileNav}>
+    <FontAwesomeIcon icon={faBars}></FontAwesomeIcon>
+    </a>)
+   )}
     </div>
   </div>)
 }

@@ -12,11 +12,20 @@
   top: 10vh;
   right: 0vw;
   bottom: 1vh;
-  padding: 30px;
+  padding: 0px;
   height: fit-content;
 }
 .layout-inner {
   background-color: #fff;
-  padding: 30px;
-  border-radius: 8px;
+  padding: 15px;
+  border-radius: 0px;
+}
+@media only screen and (min-width: 650px) {
+  .layout {
+    padding: 30px;
+  }
+  .layout-inner {
+    padding: 30px;
+    border-radius: 8px;
+  }
 }
